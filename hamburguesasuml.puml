@@ -1,0 +1,30 @@
+@startuml TiendaHamburgesas
+
+class Pan{
+Tipo:list
+}
+class Adiciones{
+Verduras: list
+Queso: list
+Salsa: list
+}
+
+
+class Carne{
+Tipo:list
+}
+
+class Bebida{
+tipo:list
+}
+
+class User{
+Pedido()
+Balance()
+}
+
+User --* Bebida
+User --* Carne
+User --* Adiciones
+User --* Pan
+@enduml 
