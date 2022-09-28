@@ -3,12 +3,20 @@
 class Pan{
 Tipo:list
 }
-class Adiciones{
-Verduras: list
-Queso: list
-Salsa: list
+class Verduras{
+Tipo:list
+}
+class Queso{
+Tipo:list
+}
+class Salsa{
+Tipo:list
 }
 
+class Hamburguesa{
+Hamburguesa(str)
+Precio(float)
+}
 
 class Carne{
 Tipo:list
@@ -19,12 +27,16 @@ tipo:list
 }
 
 class User{
-Pedido()
-Balance()
+Direccion:str
+id:int
+Metodo Pago:
+Pedido(str)
+Balance Total(float)
 }
 
-User --* Bebida
-User --* Carne
-User --* Adiciones
-User --* Pan
+Hamburguesa <|-- Carne
+Hamburguesa <|-- Queso
+Hamburguesa <|-- Verduras
+Hamburguesa <|-- Pan
+Hamburguesa <|-- Salsa
 @enduml 
