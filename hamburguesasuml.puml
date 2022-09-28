@@ -14,8 +14,8 @@ Tipo:list
 }
 
 class Hamburguesa{
-Hamburguesa(str)
-Precio(float)
+Hamburguesa()
+Precio()
 }
 
 class Carne{
@@ -29,9 +29,9 @@ tipo:list
 class User{
 Direccion:str
 id:int
-Metodo Pago:
-Pedido(str)
-Balance Total(float)
+Metodo_Pago:
+Pedido()
+Balance_Total()
 }
 
 Hamburguesa <|-- Carne
