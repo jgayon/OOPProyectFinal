@@ -13,7 +13,7 @@ class Salsa{
 Tipo:list
 }
 
-class Hamburguesa{
+class Pedido{
 Hamburguesa()
 Precio()
 }
