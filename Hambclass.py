@@ -3,86 +3,103 @@ class Usuario:
     pass
 
 class Pan:
+    def __init__(self,panesc='',costp=0) -> None:
+        self.panesc = panesc
+        self.costp = costp
     pan = {
-        'Blanco':['Blanco',1000],
-        'Integral':['Integral', 1000],
-        'Oregano':['Oregano',1100],
+        'Blanco':['Blanco',2000],
+        'Integral':['Integral', 2500],
+        'Oregano':['Oregano',2700],
     }
     def escoger_pan():
         print('Estos son nuestros Panes: ')
         print(Pan.pan.keys())
-        selec=input('Que pan prefiere?')
-        panesc = Pan.pan[selec][0]
-        costp = Pan.pan[selec][1]
+        selec=input('Que pan prefiere?\n')
+        Pan.panesc = Pan.pan[selec][0]
+        Pan.costp = Pan.pan[selec][1]
 
 class Queso:
+    def __init__(self,quesoesc='',costq=0) -> None:
+        self.quesoesc = quesoesc
+        self.costq = costq
     queso = {
-        '1':['Americano',300],
-        '2':['Cheddar',300],
-        '3':['Mozzarella',300],
+        'Americano':['Americano',500],
+        'Cheddar':['Cheddar',500],
+        'Mozzarella':['Mozzarella',500],
         
     }
     def escoger_queso():
         print('Estos son nuestros Quesos: ')
         print(Queso.queso.keys())
-        selec=input('Cual queso prefiere?')
-        quesoesc = Queso.queso[selec][0]
-        costq = Queso.queso[selec][1]
+        selec=input('Cual queso prefiere?\n')
+        Queso.quesoesc = Queso.queso[selec][0]
+        Queso.costq = Queso.queso[selec][1]
 class Carne:
+    def __init__(self,carnesc='',costc=0) -> None:
+        self.carnesc = carnesc
+        self.costc = costc
     carne={
-        '1':['Carne',2000],
-        '2':['Pollo',2000],
-        '3':['Doble Carne',2500],
-        '4':['Doble Pollo',2500],
-        '5':['Carne + Pollo',3000]
+        'Carne':['Carne',8000],
+        'Pollo':['Pollo',8000],
+        'Doble Carne':['Doble Carne',9500],
+        'Doble Pollo':['Doble Pollo',9500],
+        'Carne Pollo':['Carne + Pollo',10000]
 
     }
     def escoger_carne():
         print('Estos son nuestras Proteinas: ')
         print(Carne.carne.keys())
-        selec=input('Que Proteina prefiere?')
-        carnesc = Carne.carne[selec][0]
-        costc = Carne.carne[selec][1]
+        selec=input('Que Proteina prefiere?\n')
+        Carne.carnesc = Carne.carne[selec][0]
+        Carne.costc = Carne.carne[selec][1]
 class Salsa:
+    def __init__(self,salsaesc='',costs=0) -> None:
+        self.salsaesc = salsaesc
+        self.costs = costs
     salsa = {
-        '1':['Tomate',200],
-        '2':['Mayonesa',200],
-        '3':['Cebolla Dulce',250],
-        '4':['Picante',250]
+        'Tomate':['Tomate',200],
+        'Mayonesa':['Mayonesa',200],
+        'Cebolla Dulce':['Cebolla Dulce',250],
+        'Picante':['Picante',250]
     }
     def escoger_salsa():
         print('Estos son nuestras Salsas: ')
         print(Salsa.salsa.keys())
-        selec=input('Que Salsa le quiere poner?')
-        salsaesc = Salsa.salsa[selec][0]
-        costs = Salsa.salsa[selec][1]
+        selec=input('Que Salsa le quiere poner?\n')
+        Salsa.salsaesc = Salsa.salsa[selec][0]
+        Salsa.costs = Salsa.salsa[selec][1]
 class Verdura:
+    def __init__(self,verduraesc='',costv=0) -> None:
+        self.verduraesc = verduraesc
+        self.costv = costv
     verdura={
-        '1':['Cebolla',200],
-        '2':['Lechuga',200],
-        '3':['Tomate',200],
-        '4':['Pepinillos',200]
+        'Cebolla':['Cebolla',200],
+        'Lechuga':['Lechuga',200],
+        'Tomate':['Tomate',200],
+        'Pepinillos':['Pepinillos',200]
     }
     def escoger_verdura():
         print('Estos son nuestras Verduras: ')
         print(Verdura.verdura.keys())
-        selec=input('Que Verdura quiere añadir?')
-        verduraesc = Verdura.verdura[selec][0]
-        costv = Verdura.verdura[selec][1]
-class Pedido:
-    def hamburguesa() -> str:
-       def hamburger(panesc:str,carnesc:str,quesoesc:str,salsaesc:str,verduraesc:str) ->str:
-        hamburg = panesc + carnesc + quesoesc + salsaesc + verduraesc
+        selec=input('Que Verdura quiere añadir?\n')
+        Verdura.verduraesc = Verdura.verdura[selec][0]
+        Verdura.costv = Verdura.verdura[selec][1]
+
+def hamburger(panesc,carnesc,quesoesc,salsaesc,verduraesc) ->str:
+        hamburg = 'Pan '+ panesc +', '+ carnesc+', queso ' + quesoesc +', con salsa de '+ salsaesc +' y '+ verduraesc
         print('Su Hamburguesa esta compuesta por {}'.format(hamburg))
 
-       
+class Pedido:
+    def hamburguesa():
+             
        Pan.escoger_pan()
        Carne.escoger_carne()
        Verdura.escoger_verdura()
        Salsa.escoger_salsa()
        Queso.escoger_queso()
-       hamburger(Pan.escoger_pan.panesc,Carne.escoger_carne.carnesc,Queso.escoger_queso.quesoesc,Salsa.escoger_salsa.salsaesc,Verdura.escoger_verdura.verduraesc)
+       hamburger(Pan.panesc,Carne.carnesc,Queso.quesoesc,Salsa.salsaesc,Verdura.verduraesc)
        
 
-    def balance(costp:float,costc:float,costq:float,costs:float,costv:float) -> float:
-        total_balance = costc + costp + costq + costs + costv
+    def balance() -> float:
+        total_balance = Carne.costc + Pan.costp + Queso.costq + Salsa.costs + Verdura.costv
+        print('El valor total de su pedido es: {} pesos.'.format(total_balance))
