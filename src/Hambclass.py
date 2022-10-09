@@ -1,8 +1,9 @@
 
-from ast import Break
-
-
 class Usuario:
+    """
+    Incompleto. Averiguar como hacer una Interfaz de Usuario. 
+    Todavia no esta implementado en el code_to_run.
+    """
     def __init__(self,direccion:str,id:int, celular:int, metodop:str) -> None:
         self.direccion = direccion
         self.id = id
@@ -21,7 +22,10 @@ class Usuario:
             pass
         elif Usuario.metodop == 'Aplicacion Bancaria':
             pass
-
+"""
+Clases de Ingredientes + Bebidas. Todas tienen el mismo concepto, y el metodo de seleccion de
+los ingredientes etc.
+"""
 class Bebida:
     def __init__(self,bebidaesc,costb) -> None:
         self.bebidaesc = bebidaesc
@@ -125,11 +129,17 @@ class Verdura:
         selec=input('Que Verdura quiere añadir?\n')
         Verdura.verduraesc = Verdura.verdura[selec][0]
         Verdura.costv = Verdura.verdura[selec][1]
-
+"""
+Metodo Hamburger: Arma la Hamburguesa.
+"""
 def hamburger(panesc,carnesc,quesoesc,salsaesc,verduraesc) ->str:
         hamburg = 'Pan '+ panesc +', '+ carnesc+', queso ' + quesoesc +', con salsa de '+ salsaesc +' y '+ verduraesc
         print('Su Hamburguesa esta compuesta por {}'.format(hamburg))
 
+"""
+Clase Pedido: Contiene todos los metodos de escogencia y el costo final del pedido(balance()). 
+Practicamente el codigo principal en si.
+"""
 class Pedido:
     def pedido():
              
