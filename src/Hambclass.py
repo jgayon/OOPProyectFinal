@@ -1,27 +1,3 @@
-
-class Usuario:
-    """
-    Incompleto. Averiguar como hacer una Interfaz de Usuario. 
-    Todavia no esta implementado en el code_to_run.
-    """
-    def __init__(self,direccion:str,id:int, celular:int, metodop:str) -> None:
-        self.direccion = direccion
-        self.id = id
-        self.celular = celular
-        self.metodop = metodop
-    
-    def datos_user():
-        Usuario.direccion = input('Escriba la direccion de su domicilio: \n')
-        Usuario.id = int(input('Digite su numero de cedula: \n'))
-        Usuario.celular= int(input('Digite su numero de Celular: \n'))
-    def metodos_pago():
-        Usuario.metodop = input('Como planea pagar su compra? Efectivo, Tarjeta o  Aplicacion Bancaria?\n')
-        if Usuario.metodop == 'Efectivo':
-            pass
-        elif Usuario.metodop == 'Tarjeta':
-            pass
-        elif Usuario.metodop == 'Aplicacion Bancaria':
-            pass
 """
 Clases de Ingredientes + Bebidas. Todas tienen el mismo concepto, y el metodo de seleccion de
 los ingredientes etc.
@@ -40,7 +16,7 @@ class Bebida:
         sw= input('Quiere añadir una bebida a su pedido? Si o No\n')
         if sw == 'Si':
             print('Estos son nuestras Bebidas: ')
-            print(Bebida.bebida.keys())
+            print('Coca Cola, Pepsi, Kola Roman, y Sprite')
             selec=input('Cual desea?\n')
             Bebida.bebidaesc = Bebida.bebida[selec][0]
             Bebida.costb = Bebida.bebida[selec][1]
@@ -58,7 +34,7 @@ class Pan:
     }
     def escoger_pan():
         print('Estos son nuestros Panes: ')
-        print(Pan.pan.keys())
+        print('Blanco, Integral, y Oregano')
         selec=input('Que pan prefiere?\n')
         Pan.panesc = Pan.pan[selec][0]
         Pan.costp = Pan.pan[selec][1]
@@ -75,7 +51,7 @@ class Queso:
     }
     def escoger_queso():
         print('Estos son nuestros Quesos: ')
-        print(Queso.queso.keys())
+        print('Americano, Cheddar, y Mozzarella\n')
         selec=input('Cual queso prefiere?\n')
         Queso.quesoesc = Queso.queso[selec][0]
         Queso.costq = Queso.queso[selec][1]
@@ -93,7 +69,7 @@ class Carne:
     }
     def escoger_carne():
         print('Estos son nuestras Proteinas: ')
-        print(Carne.carne.keys())
+        print('Carne, Pollo, Doble Carne, Doble Pollo, y Carne Pollo')
         selec=input('Que Proteina prefiere?\n')
         Carne.carnesc = Carne.carne[selec][0]
         Carne.costc = Carne.carne[selec][1]
@@ -109,7 +85,7 @@ class Salsa:
     }
     def escoger_salsa():
         print('Estos son nuestras Salsas: ')
-        print(Salsa.salsa.keys())
+        print('Tomate, Mayonesa, Cebolla Dulce, y Picante')
         selec=input('Que Salsa le quiere poner?\n')
         Salsa.salsaesc = Salsa.salsa[selec][0]
         Salsa.costs = Salsa.salsa[selec][1]
@@ -125,7 +101,7 @@ class Verdura:
     }
     def escoger_verdura():
         print('Estos son nuestras Verduras: ')
-        print(Verdura.verdura.keys())
+        print('Cebolla, Lechuga, Tomate, y Pepinillos')
         selec=input('Que Verdura quiere añadir?\n')
         Verdura.verduraesc = Verdura.verdura[selec][0]
         Verdura.costv = Verdura.verdura[selec][1]
@@ -141,6 +117,9 @@ Clase Pedido: Contiene todos los metodos de escogencia y el costo final del pedi
 Practicamente el codigo principal en si.
 """
 class Pedido:
+    def __init__(self) -> None:
+        self.total_balance = 0
+
     def pedido():
              
        Pan.escoger_pan()
@@ -153,5 +132,40 @@ class Pedido:
        
 
     def balance() -> float:
-        total_balance = Carne.costc + Pan.costp + Queso.costq + Salsa.costs + Verdura.costv + Bebida.costb
-        print('El valor total de su pedido es: {} pesos.'.format(total_balance))
+        Pedido.total_balance = Carne.costc + Pan.costp + Queso.costq + Salsa.costs + Verdura.costv + Bebida.costb
+        return('El valor total de su pedido es: {} pesos.'.format(Pedido.total_balance))
+
+class Usuario():
+    
+    def __init__(self,nombre,direccion:str,id:int, celular:int, metodop:str) -> None:
+        self.direccion = direccion
+        self.id = id
+        self.celular = celular
+        self.metodop = metodop
+        self.nombre=nombre
+    
+    def datos_user():
+        Usuario.nombre= input('Cual es tu Nombre: \n')
+        Usuario.direccion = input('Escriba la direccion de su domicilio: \n')
+        Usuario.id = int(input('Digite su numero de cedula: \n'))
+        Usuario.celular= int(input('Digite su numero de Celular: \n'))
+    def metodos_pago():
+        Usuario.metodop = input('Como planea pagar su compra? Efectivo, Tarjeta o  Aplicacion Bancaria?\n')
+        if Usuario.metodop == 'Efectivo':
+            print('Ha elegido Pago por Efectivo.')
+            print(f'El valor de su pedido es: {Pedido.total_balance}')
+            pagare=int(input('Digite el monto que pagara: \n'))
+            cambio= pagare - Pedido.total_balance  
+            print(f'Tu cambio total es: {cambio}')
+        elif Usuario.metodop == 'Tarjeta':
+            print('Ha elegido pago por Tarjeta.')
+            tarjeta=input('Digite el numero de su Tarjeta: \n')
+            print('Procesando...')
+            print(f'Transaccion Aprobada!\nSe han transferido {Pedido.total_balance} pesos.')
+        elif Usuario.metodop == 'Aplicacion Bancaria':
+            print('Ha elegido Pago por Aplicacion Bancaria.')
+            banco=input('Digite el Banco por cual va a pagar: \n')
+            cuenta= input('Ingrese el numero de cuenta: \n')
+            print('Procesando...')
+            print(f'Transaccion Aprobada!\nSe han transferido {Pedido.total_balance} pesos.')
+        print(f'Muchas gracias por tu compra {Usuario.nombre} tu predido sera entregado a {Usuario.direccion} en momentos!')
