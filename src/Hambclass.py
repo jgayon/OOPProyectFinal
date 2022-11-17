@@ -4,6 +4,7 @@ import Escoger
 Clases de Ingredientes + Bebidas. Son Polimorphas, y  contienen el metodo de seleccion de
 los ingredientes etc.
 """
+#clase bebida
 class Bebida:
     menu =['Coca Cola','Pepsi','Kola Roman','Sprite']
     def __init__(self,bebidaesc,costb) -> None:
@@ -16,7 +17,7 @@ class Bebida:
         'Sprite':2500
     }
     
-
+#metodos bebida
     def escoger_bebida():
         sw= input('Quiere añadir una bebida a su pedido? Si o No\n')
         Bebida.bebidaesc= []
@@ -36,9 +37,10 @@ class Bebida:
                     cont = True
         elif sw == 'No':
             Bebida.costb = 0
-
+#clase pan
 class Pan:
     menu=['Blanco','Integral','Oregano']
+    #metodos pan
     def __init__(self,panesc='',costp=0) -> None:
         self.panesc = panesc
         self.costp = costp
@@ -53,9 +55,10 @@ class Pan:
         Pan.panesc = selec
         Pan.costp = Pan.pan[selec]
         
-
+#clase queso
 class Queso:
     menu=['Americano','Cheddar','Mozzarella','Provolone']
+    #metodos queso
     def __init__(self,quesoesc='',costq=0) -> None:
         self.quesoesc = quesoesc
         self.costq = costq
@@ -79,9 +82,10 @@ class Queso:
                 cont = False
             else:
                 cont = True
-
+#clase carne
 class Carne:
     menu=['Carne','Pollo','Doble Carne','Doble Pollo','Carne Pollo']
+    #metodos carne
     def __init__(self,carnesc='',costc=0) -> None:
         self.carnesc = carnesc
         self.costc = costc
@@ -99,11 +103,12 @@ class Carne:
         Carne.carnesc = selec
         Carne.costc = Carne.carne[selec]
             
-
+#clase salsa
 class Salsa:
     menu = ['Tomate','Mayonesa',
         'Cebolla dulce',
         'Picante']
+    #metodos salsa
     def __init__(self,salsaesc='',costs=0) -> None:
         self.salsaesc = salsaesc
         self.costs = costs
@@ -127,9 +132,10 @@ class Salsa:
                 cont = False
             else:
                 cont = True
-
+#clase verdura
 class Verdura:
     menu=['Cebolla', 'Lechuga', 'Tomate', 'Pepinillos']
+    #metodos verdura
     def __init__(self,verduraesc='',costv=0) -> None:
         self.verduraesc = verduraesc
         self.costv = costv
