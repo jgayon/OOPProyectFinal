@@ -8,12 +8,12 @@ Actualmente uno de los factores determinantes en el negocio de comidas rápidas 
 - La creación y selección de los elementos de la Hamburguesas.
 - El balance total del pedido.
 - La disponibilidad del producto.
-- Los datos del Usuario (Dirección, Medio de Pago).
+- Los datos del User (Dirección, Medio de Pago).
 
 ### Requerimientos no funcionales
 - Lenguaje de programación: Python
 - Software ejecutable en PC
-- Interfaz amigable para el usuario
+- Interfaz amigable para el User
 - Instrucciones de uso
 - Requerimientos legales
 - La aplicación de escritorio debe funcionar en Windows
