@@ -40,36 +40,6 @@ class ListaEnlazada:
             current = current.next
         return elementos
 
-# Clase para una pila
-class Pila:
-    def __init__(self):
-        self.items = []
-
-    def esta_vacia(self):
-        return len(self.items) == 0
-
-    def apilar(self, valor):
-        self.items.append(valor)
-
-    def desapilar(self):
-        if not self.esta_vacia():
-            return self.items.pop()
-
-# Clase para una cola
-class Cola:
-    def __init__(self):
-        self.items = []
-
-    def esta_vacia(self):
-        return len(self.items) == 0
-
-    def encolar(self, valor):
-        self.items.append(valor)
-
-    def desencolar(self):
-        if not self.esta_vacia():
-            return self.items.pop(0)
-
 class Ingrediente:
     def __init__(self, nombre, precio):
         self.nombre = nombre
